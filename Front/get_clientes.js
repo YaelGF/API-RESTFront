@@ -16,6 +16,7 @@ function getClientes(offset) {
 
     tblHead.innerHTML = `
         <tr>
+            <th>Detalle</th>
             <th>Id</th>
             <th>Nombre</th>
             <th>Email</th>
@@ -34,20 +35,20 @@ function getClientes(offset) {
         else if (request.status == 202){
             for (let i = 0; i < json.length; i++) {
                 var tr = document.createElement('tr');
-                //var tr_get_cliente = document.createElement('td');
-                var tr_id_cliente = document.createElement('td');
-                var tr_nombre = document.createElement('td');
-                var tr_email = document.createElement('td');
+                var td_get_cliente = document.createElement('td');
+                var td_id_cliente = document.createElement('td');
+                var td_nombre = document.createElement('td');
+                var td_email = document.createElement('td');
 
-                //tr_get_cliente.innerHTML = "<a href='\\cliente\\get\\"+json[i].id_cliente+"'>Ver</a>";;
-                tr_id_cliente.innerHTML = json[i].id_cliente;
-                tr_nombre.innerHTML = json[i].nombre;
-                tr_email.innerHTML = json[i].email;
+                td_get_cliente.innerHTML = "<a href=\get_cliente.html?"+json[i].id_cliente+">Detalle</a>";
+                td_id_cliente.innerHTML = json[i].id_cliente;
+                td_nombre.innerHTML = json[i].nombre;
+                td_email.innerHTML = json[i].email;
 
-                //tr.appendChild(tr_get_cliente);
-                tr.appendChild(tr_id_cliente);
-                tr.appendChild(tr_nombre);
-                tr.appendChild(tr_email);
+                tr.appendChild(td_get_cliente);
+                tr.appendChild(td_id_cliente);
+                tr.appendChild(td_nombre);
+                tr.appendChild(td_email);
                 
                 tblBody.appendChild(tr);
             }
