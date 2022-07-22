@@ -20,6 +20,8 @@ function getClientes(offset) {
             <th>Id</th>
             <th>Nombre</th>
             <th>Email</th>
+            <th>Actualizar</th>
+            <th>Borrar</th>
         </tr>`;
 
     request.onload = () => {
@@ -39,16 +41,23 @@ function getClientes(offset) {
                 var td_id_cliente = document.createElement('td');
                 var td_nombre = document.createElement('td');
                 var td_email = document.createElement('td');
+                var td_update_cliente = document.createElement('td');
+                var td_delete_cliente = document.createElement('td');
 
                 td_get_cliente.innerHTML = "<a href=\get_cliente.html?"+json[i].id_cliente+">Detalle</a>";
                 td_id_cliente.innerHTML = json[i].id_cliente;
                 td_nombre.innerHTML = json[i].nombre;
                 td_email.innerHTML = json[i].email;
+                td_update_cliente.innerHTML = "<a href=update_cliente.html?"+json[i].id_cliente+">Update</a>";
+                td_delete_cliente.innerHTML = '<input type="button" value="Borrar" onclick="deleteCliente('+json[i].id_cliente+')"/>';
+
 
                 tr.appendChild(td_get_cliente);
                 tr.appendChild(td_id_cliente);
                 tr.appendChild(td_nombre);
                 tr.appendChild(td_email);
+                tr.appendChild(td_update_cliente);
+                tr.appendChild(td_delete_cliente);
                 
                 tblBody.appendChild(tr);
             }

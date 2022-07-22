@@ -9,6 +9,7 @@
 <body>
     <body>
         <h1>Cliente</h1>
+        <h2>Actuales</h2>
         <script type="text/javascript" src="js/get_cliente.js"></script>
         Nombre:
         <input type="text" id="nombre" readonly>
@@ -18,6 +19,18 @@
         <script async>
             document.body.onload = getCliente();
         </script>
+        <br>
+        <h2>Nuevos</h2>
+        <form id ="form_cliente">
+            <label for="nombre_update">Nombre</label>
+            <input type="text" id="nombre_update" name="nombre_update">
+            <br>
+            <label for="email_update">Email</label>
+            <input type="text" id="email_update" name="email_update">
+            <br>
+            <input type="button" value="Guardar" onclick="updateCliente()"/>
+        </form>
+    <script src="js/update_cliente.js"></script>
     </body>
 </body>
 </html>
