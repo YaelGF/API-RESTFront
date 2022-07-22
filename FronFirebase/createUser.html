@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Registro</title>
 </head>
 <body>
-    <form id ="form_cliente">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Registrate</h3>
+
         <label for="email">Email</label>
-        <input type="text" id="email" name="email">
+        <input type="text" placeholder="Email" id="email">
+
         <label for="password">Contraseña</label>
-        <input type="text" id="password" name="password">
+        <input type="password" placeholder="Contraseña" id="password">
+
         <label for="passwordC">Confirmar Contraseña</label>
-        <input type="text" id="passwordC" name="passwordC">
+        <input type="password" id="passwordC" placeholder="Contraseña">
 
         <label for="name">Nombre de usuario</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" placeholder="Nombre de usuario">
 
-        <input type="button" value="Registrarse" onclick="createUser()"/>
-
+        <input type="button" value="Registrarse" onclick="createUser()">
+        <div class="social">
+          <div><a href="index.html">Logeo</a></div>
+        </div>
     </form>
     <script src="js/createUser.js"></script>
 </body>
