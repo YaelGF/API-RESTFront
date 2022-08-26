@@ -7,7 +7,8 @@ function createUser(){
 
     var request = new XMLHttpRequest();
     if(password.value !== passwordC.value){
-        alert("Contraseñas no Coinciden")
+        alert("Contraseñas no Coinciden");
+        throw new Error("Contraseñas no Coinciden");
     };
     request.open("POST","http://127.0.0.1:8000/user/?email="+email.value+"&password="+password.value+"&name="+name.value,true);
     request.setRequestHeader('Accept', 'application/json');
